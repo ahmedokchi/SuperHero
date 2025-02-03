@@ -1,15 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Login, Logout } from "../../auth/LoginOut";
-import { useAuth } from "../../auth/AuthProvider"; // Assurez-vous d'utiliser ce hook correctement
-
+import { useAuth } from "../../auth/AuthProvider"; 
 const Intro = () => {
   const navigate = useNavigate();
-  const { user } = useAuth(); // Récupère l'utilisateur depuis le contexte d'authentification
+  const { user } = useAuth(); 
 
   const handleGetStarted = () => {
     navigate("/heros");
   };
+ 
 
   return (
     <div>

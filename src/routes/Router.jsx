@@ -6,6 +6,7 @@ import NotFound from "../components/404/404";
 import HeroCards from "../components/HeroCards/HeroCards";
 import HeroDetails from "../components/HeroDetails/HeroDetails";
 import Intro from "../components/Intro/Intro";
+import Contact from "../pages/Contact/Contact"
 
 export default function Router() {
   const { user } = useAuth(); 
@@ -17,6 +18,10 @@ export default function Router() {
       <Route path="/hero/:id" element={<HeroDetails />} />
       <Route path="/" element={<Intro />} />
       
+      <Route
+        path="/contact"
+        element={user ? <Contact /> : <Navigate to="/" replace />}
+      />
     </Routes>
   );
 }
